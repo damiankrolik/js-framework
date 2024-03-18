@@ -1,0 +1,16 @@
+<main :state="{count: 0}">
+	<h1 :html="count.val" @load="get:/count"></h1>
+
+	<button
+		@click="count.set(old => old + 1)"
+		:show="count.val < 20">
+		+1
+	</button>
+
+	<button
+		name="count"
+		:value="count.val"
+		@click="post:/count">
+		Save
+	</button>
+</main>
